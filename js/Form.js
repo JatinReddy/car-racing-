@@ -23,7 +23,7 @@ class Form{
             playerCount = playerCount+1;
             player.index = playerCount;
 
-            player.update(player.name);
+            player.update();
             player.updateCount(playerCount)
         })
 

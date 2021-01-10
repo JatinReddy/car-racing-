@@ -3,10 +3,12 @@ var database;
 var playerCount = 0;
 var game,form,player;
 var allPlayers;
+var car1, car2, car3,car4;
+var cars = []
 
 
 function setup(){
-    createCanvas(500,500);
+    createCanvas(displayWidth-50,displayHeight-250);
 
     database = firebase.database();
     
