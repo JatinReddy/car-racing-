@@ -42,6 +42,7 @@ class Game{
         form.greeting.hide();
         Player.getPlayersInfo();
         image(trackImage,0,-6*height-100,width,7*height);
+        player.getcarEnd();
 
         //console.log(allPlayers);
         //allPlayers - player1,player2,player3... 
@@ -78,9 +79,24 @@ class Game{
         }
         if(player.distance >4350){
             gameState = 2;
+            player.rank = player.rank+1;
+            player.updatecarEnd(player.rank);
+            player.update();
         }
     }
     end(){
         console.log("game ended");
+        console.log(player.rank);
+
+        var y = 300
+        camera.position.x = 400;
+        camera.position.y = 300;
+        background("orange");
+
+        for(var plr in allPlayers){
+            text(allPlayers[plr].name+":"+allPlayers[plr].rank,400,y)
+            y = y+30;
+            }
+
     }
 }
